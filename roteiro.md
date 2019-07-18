@@ -125,3 +125,51 @@ docker push jvferreira/nodejs-completo:1.0.0
 ```
 
 Pronto! Versionamos nossa imagem no Dockerhub!
+
+##############################################################################
+##############################################################################
+##############################################################################
+#################### PARTE 4 - Explicando Comandos Docker ####################
+
+## Docker inspect
+
+O comando docker inspect retorna um `json` contendo todas as informações referentes as configurações do container.
+
+```
+docker inspect NOMO_DO_CONTAINER
+```
+
+## Docker logs
+Apresenta as informações do que está sendo enviando para a console do container.
+
+```
+docker logs NOME_DO_CONTAINER
+```
+
+## User
+Este comando é responsável por alterar o usuário e permissões de um container.
+
+```
+docker run -it --name NOME_DO_CONTAINER -u $(id -u):$(id -g) NOME_DA_IMAGE
+```
+
+## Attach
+O comando `docker attach` acessa o `bash` que está estanciado no container
+
+```
+docker attach NOME_DO_CONTAINER
+```
+
+## Exec
+O comando `docker exec` acessa o `bash` do container, porém, diferente do `docker attach` ele estancia um novo `bash`.
+
+```
+docker exec -it NOME_DO_CONTAINER bash
+```
+
+## Network
+
+**Drivers**
+
+ 1. **Bridge** - O driver `bridge` cria uma rede privada interna para o host para que os containers dessa rede possam se comunicar. O acesso externo é concedido pela exposição de portas a containers. O Docker protege a rede gerenciando regras que bloqueiam a conectividade entre diferentes redes Docker.
+ 2. **Host** - A opção `host` é usada para fazer com que os programas dentro do contêiner do Docker pareçam estar sendo executados no próprio host, da perspectiva da rede. Ele permite ao contêiner maior acesso à rede do que normalmente consegue.
