@@ -177,7 +177,7 @@ docker exec -it NOME_DO_CONTAINER bash
  ##############################################################################
  ##############################################################################
  ##############################################################################
- ############################ PARTE 5 - Exercícios ############################
+ ############################# PARTE 5 - Exercícios #############################
 
   1. Baixar uma imagem do DockerHub e gerar um container a partir da imagem
   2. Refatorar o Dockerfile de acordo com as boas práticas explicadas anteriormente.
