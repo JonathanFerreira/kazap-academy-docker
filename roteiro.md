@@ -173,3 +173,12 @@ docker exec -it NOME_DO_CONTAINER bash
 
  1. **Bridge** - O driver `bridge` cria uma rede privada interna para o host para que os containers dessa rede possam se comunicar. O acesso externo é concedido pela exposição de portas a containers. O Docker protege a rede gerenciando regras que bloqueiam a conectividade entre diferentes redes Docker.
  2. **Host** - A opção `host` é usada para fazer com que os programas dentro do contêiner do Docker pareçam estar sendo executados no próprio host, da perspectiva da rede. Ele permite ao contêiner maior acesso à rede do que normalmente consegue.
+
+ ##############################################################################
+ ##############################################################################
+ ##############################################################################
+ ############################ PARTE 5 - Exercícios ############################
+
+  1. Baixar uma imagem do DockerHub e gerar um container a partir da imagem
+  2. Refatorar o Dockerfile de acordo com as boas práticas explicadas anteriormente.
+  requisitos: Expor uma porta e alterar o diretório raiz do container.  
