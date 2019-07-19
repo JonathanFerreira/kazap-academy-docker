@@ -220,7 +220,7 @@ Mostrar como criar um volume no comando RUN
   E criar um container com volume excluir e mostrar que os arquivos criados no
     HOST ainda continua lá e os do container se perderam
 
-##Linkagem de Containers
+## Linkagem de Containers
 Mostrar o commando
   run --link NOME_DO_CONTAINER:ALIAS_DO_LINK
 Pingar no alias do link para mostrar o funcionamento
