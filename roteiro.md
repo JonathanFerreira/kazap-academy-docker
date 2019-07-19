@@ -131,6 +131,12 @@ Pronto! Versionamos nossa imagem no Dockerhub!
 ##############################################################################
 #################### PARTE 4 - Explicando Comandos Docker ####################
 
+## Docker pull
+Baixa uma imagem do DockerHub
+```
+docker pull NOME_DA_IMAGE
+```
+
 ## Docker inspect
 
 O comando docker inspect retorna um `json` contendo todas as informações referentes as configurações do container.
@@ -146,6 +152,28 @@ Apresenta as informações do que está sendo enviando para a console do contain
 docker logs NOME_DO_CONTAINER
 ```
 
+## CMD x ENTRYPOINT
+Dispara uma função à partir do momento em que o container é estanciado
+
+```
+ENTRYPOINT ["/bin/echo", "Hello"]
+CMD ["world"]
+```
+
+## Acessando o container que fechou com EXIT
+Entra no bash e da um EXIT
+Depois
+```
+docker start NOME_DO_CONTAINER
+```
+
+```
+docker ps
+```
+
+```
+docker attach NOME_DO_CONTAINER
+```
 ## User
 Este comando é responsável por alterar o usuário e permissões de um container.
 
@@ -167,7 +195,52 @@ O comando `docker exec` acessa o `bash` do container, porém, diferente do `dock
 docker exec -it NOME_DO_CONTAINER bash
 ```
 
+## Memory
+Comando docker que limita a memória do container
+
+```
+--memory="512M"
+```
+
+## Restart
+realiza uma ação quando o docker cai
+```
+--restart no
+--restart on-failure
+--restart always
+--restart unless-stopped
+```
+Mostrar na prática o comando restart
+Criar um container iniciando com o bash aberto e utilizando o parametro (--restart always)
+  sair do container com EXIT
+  DOCKER PS pra mostrar que o container foi startado novamente
+
+## Volume
+Volume
+  Mostrar como criar um volume no comando RUN
+  E criar um container com volume excluir e mostrar que os arquivos criados no
+    HOST ainda continua lá e os do container se perderam
+
+##Linkagem de Containers
+Mostrar o commando
+  run --link NOME_DO_CONTAINER:ALIAS_DO_LINK
+Pingar no alias do link para mostrar o funcionamento
+
+## Docker attach x Docker exec
+Mostrar na pratica obs (Iniciar a criação de um novo projeto em rails e apertar
+  CTRL+P+Q e entrar no container com o camando ATTACH e EXEC)
+
 ## Network
+Tipos de network
+Diferença entre elas
+Como criar uma network
+  docker network create -d NOME_DO_DRIVE NOME_DA_NETWORK
+Listar network's
+  docker network ls
+Remover network
+  docker rm NOME_DA_NETWORK
+Adicionar um container a uma network criada
+  docker network connect NOME_DA_NETWORK NOME_DO_CONTAINER
 
 **Drivers**
 
