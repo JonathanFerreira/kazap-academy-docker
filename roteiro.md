@@ -216,8 +216,7 @@ Criar um container iniciando com o bash aberto e utilizando o parametro (--resta
   DOCKER PS pra mostrar que o container foi startado novamente
 
 ## Volume
-Volume
-  Mostrar como criar um volume no comando RUN
+Mostrar como criar um volume no comando RUN
   E criar um container com volume excluir e mostrar que os arquivos criados no
     HOST ainda continua lá e os do container se perderam
 
